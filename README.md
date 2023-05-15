@@ -104,7 +104,7 @@ membuat sale order dengan API ke Odoo:
         ]
 
     }
-    untuk orderline nya bisa lebih dari 1 record
-2. setelah sale order terbuat akan langsung di confirm
-3. seletelah terconfirm sale order akan membuat invoice dan langsung di confirm
-4. setelah terconfirm akan membuat register payment automatis sehingga data invoice nya sudah terbayar
+    untuk orderline nya bisa lebih dari 1 record.
+2. setelah sale order terbuat akan langsung di confirm.
+3. seletelah terconfirm sale order akan membuat invoice dan langsung di confirm.
+4. setelah terconfirm akan membuat register payment automatis sehingga data invoice nya sudah terbayar.
