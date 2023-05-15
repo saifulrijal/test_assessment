@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "01bbd2d3-6029-4fb2-97b0-d2e9d829698c",
+		"name": "Odoo api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23364364"
+	},
+	"item": [
+		{
+			"name": "login without api key",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "login",
+						"value": "admin",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "admin",
+						"type": "text"
+					},
+					{
+						"key": "db",
+						"value": "odoo_api",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/plain",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8015/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8015",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api_key",
+						"value": "access_token_86500463eb573b57fe07a75f9400e8a166c4bc75",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{'partner_id': {'uuid': '12', 'nama': 'sayaka'}, 'order_line': [{'product_id': {'uuid': 'd992453e-c26e-48d6-bedc-92bc55f8585e', 'komoditas': 'BANDENG', 'area_provinsi': 'SULAWESI BARAT', 'area_kota': 'MAMUJU UTARA', 'size': '180', 'price': '29000', 'tgl_parsed': '2022-01-01T19:08:13Z', 'timestamp': '1641064093344'}, 'name': 'hay', 'qty': 12, 'price': 29000}]}"
+				},
+				"url": {
+					"raw": "http://localhost:8015/api/create/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8015",
+					"path": [
+						"api",
+						"create",
+						"order"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"1. membuat sale order dari API",
+					"2. membuat invoice dari sale order yang terbuat",
+					"3. membuat register payment dari invoice yang terbuat"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

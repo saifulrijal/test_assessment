@@ -1,0 +1,12 @@
+<odoo>
+    <record id="ir_cron_auto_update_currencies" model="ir.cron">
+        <field name="name">multy currency</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="model_id" ref="base.model_res_config_settings"/>
+        <field name="code">model.update_currency_rates_manually()</field>
+        <field name="state">code</field>
+    </record>
+</odoo>
